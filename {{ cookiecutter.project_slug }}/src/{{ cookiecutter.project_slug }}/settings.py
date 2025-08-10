@@ -7,6 +7,10 @@ def mkhelp(help_text: str) -> dict[str, dict[str, str]]:
 
 @dataclass
 class Settings:
+    show_config: bool = field(
+        default=False,
+        metadata=mkhelp("Show the effective configuration and exit"),
+    )
     optional_integer: int | None = field(
         default=None,
         metadata=mkhelp("An example optional integer setting"),
@@ -14,8 +18,4 @@ class Settings:
     optional_string: str | None = field(
         default=None,
         metadata=mkhelp("An optional string setting"),
-    )
-    boolean: bool = field(
-        default=False,
-        metadata=mkhelp("An example boolean setting"),
     )
