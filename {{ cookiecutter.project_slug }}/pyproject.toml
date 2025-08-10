@@ -1,0 +1,50 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "{{ cookiecutter.project_slug }}"
+version = "0.1.0"
+description = "A command line tool to generate Python scripts using LLM"
+authors = [{name = "{{ cookiecutter.author }}", email = "{{ cookiecutter.email }}"}]
+readme = "README.rst"
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.0",
+    "platformdirs",
+    "rich>=13.0.0",
+    "typed-settings>=1.0.0",
+    "typing-extensions>=4.0.0"
+]
+
+[project.urls]
+Home = "https://github.com/akaihola/{{ cookiecutter.project_slug }}"
+"Source Code" = "https://github.com/akaihola/{{ cookiecutter.project_slug }}"
+"Change Log" = "https://github.com/akaihola/{{ cookiecutter.project_slug }}/blob/main/CHANGES.rst"
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[project.scripts]
+{{ cookiecutter.project_slug }} = "{{ cookiecutter.project_slug }}.__main__:main"
+
+[dependency-groups]
+dev = [
+    "mypy",
+    "pytest",
+]
+
+[tool.darker]
+formatter = "ruff"
+isort = true
+revision = "main..."
+src = ["src"]
+
+[tool.graylint]
+lint = [
+    "ruff check --output-format=concise",
+    "mypy",
+    "pydocstyle",
+]
+revision = "main..."
+src = ["src"]

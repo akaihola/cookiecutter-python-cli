@@ -1,0 +1,5 @@
+{
+  "project_name": "Cookiecutter Python CLI Application",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "author": "Antti Kaihola",
+  "email": "13725+akaihola@users.noreply.github.com"}
