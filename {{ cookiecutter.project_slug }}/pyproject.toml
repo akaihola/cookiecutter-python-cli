@@ -26,7 +26,7 @@ Home = "https://github.com/akaihola/{{ cookiecutter.project_slug }}"
 ignore_missing_imports = true
 
 [project.scripts]
-{{ cookiecutter.project_slug }} = "{{ cookiecutter.project_slug }}.__main__:main"
+{{ cookiecutter.project_slug }} = "{{ cookiecutter.project_package }}.__main__:main"
 
 [dependency-groups]
 dev = [
