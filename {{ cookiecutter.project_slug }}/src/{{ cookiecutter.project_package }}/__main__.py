@@ -4,7 +4,7 @@ from platformdirs import user_config_path
 import click
 import typed_settings as ts
 
-from {{ cookiecutter.project_slug }}.settings import Settings
+from {{ cookiecutter.project_package }}.settings import Settings
 
 
 @click.command()
